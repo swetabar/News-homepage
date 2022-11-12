@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10 px here, usually 1 rem = 16px */
+  font-family: "Inter";
+}
+
+/* For desktops we wish to keep a margin on all sides */
+@media only screen and (min-width: 601px) {
+  * {
+    margin-bottom: 1%;
+  }
+  body {
+    margin: 2% 10% 1% 10%;
+  }
+
+  .main-content {
+    display: flex;
+    gap: 3%;
+  }
+
+  aside {
+    display: flex;
+    gap: 3%;
+    margin-top: 5%;
+  }
+
+  .aside-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+  }
+}
+
+a:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+h1 {
+  font-family: "Inter";
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: #5e607a;
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+.read-more-btn {
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  background-color: hsl(5, 85%, 63%);
+  color: #fffdfa;
+}
+
+.read-more-btn:hover {
+  background-color: #00001a;
+  cursor: pointer;
+}
+
+.secondary-content {
+  background-color: #00001a;
+  color: #fffdfa;
+  padding: 1rem 2rem 0 2rem; /*top - right - bottom - left*/
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+h2 {
+  color: #e9aa52;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+.content-details {
+  color: #5e607a;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+}
+
+.button-mobile-nav {
+  display: none;
+}
+
+.introduction {
+  width: 100%;
+  height: auto;
+}
+
+.secondary-heading {
+  font-size: 2rem;
+  padding-top: 8%;
+}
+
+.secondary-description {
+  font-size: 1.5rem;
+  padding-bottom: 5%;
+}
+
+hr {
+  border: none;
+  height: 0.01rem;
+  background-color: #fffdfa; /* Modern Browsers */
+}
+
+.aside-details h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #c5c6ce;
+}
+
+.aside-details h4 {
+  color: #00001a;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.aside-details h4:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+.aside-details p {
+  font-size: 1.5rem;
+  color: #5e607a;
+  line-height: 2.6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Mobile styles */
+  * {
+    /* To have uniform spacing between all sections in the mobile view.
+    Otherwise, they are all stacked one on top of another. */
+    margin: 1% 0 0 0;
+    padding: 0;
+  }
+
+  html {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0;
+    font-size: 62.5%;
+  }
+
+  aside {
+    display: grid;
+  }
+
+  .button-mobile-nav {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: block;
+    z-index: 900;
+  }
+
+  .mobile-menu-close {
+    display: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+
+  .button-mobile-nav {
+    display: block;
+  }
+
+  /* When navigation is open in mobile, we want to set the
+opacity as 1 in .nav-bar css so that we see the navigation panel opened */
+  .nav-open .nav-bar {
+    background: linear-gradient(
+      to right,
+      rgba(81, 76, 76, 0.737) 0%,
+      rgba(81, 76, 76, 0.737) 30%,
+      rgba(255, 255, 255, 0.991) 30%,
+      rgba(255, 255, 255, 0.991) 100%
+    );
+    opacity: 1;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+  }
+
+  .nav-open a {
+    text-decoration: none;
+    color: #00001a;
+    padding: 3%;
+    padding-left: 20%;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .nav-open a:nth-child(1) {
+    margin-top: 20%;
+  }
+
+  .nav-open .mobile-menu-close {
+    display: block;
+  }
+
+  .nav-open .mobile-menu {
+    display: none;
+  }
+
+  .secondary-content {
+    margin-top: 15%;
+  }
+
+  aside {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    grid-row-gap: 5%;
+  }
+
+  .aside-image {
+    width: 90%;
+    height: 80%;
+  }
+}
